@@ -31,10 +31,6 @@ app.get('/weather',(req, res) =>{
     });
 });
 
-app.get('*',(req, res) =>{
-    res.render("404");
-})
-
 app.get("/puzzle",(req, res) =>{
     fetch("http://puzzle.mead.io/puzzle").then((response) =>{
         response.json().then((data) =>{
@@ -42,6 +38,12 @@ app.get("/puzzle",(req, res) =>{
         })
     })
 });
+
+app.get('*',(req, res) =>{
+    res.render("404");
+})
+
+
 
 
 
