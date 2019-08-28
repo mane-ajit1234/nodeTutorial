@@ -20,7 +20,7 @@ app.use(express.static(publicDirPath));
 
 
 app.get('',(req, res) =>{
-    res.send("Hello Express");
+    res.send("Hello Express on Heroku");
 })
 
 app.get('/weather',(req, res) =>{
