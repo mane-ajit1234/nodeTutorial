@@ -35,11 +35,15 @@ app.get('*',(req, res) =>{
     res.render("404");
 })
 
-fetch("http://puzzle.mead.io/puzzle").then((response) =>{
-    response.json().then((data) =>{
-        console.log(data);
+app.get("/puzzle",(req, res) =>{
+    fetch("http://puzzle.mead.io/puzzle").then((response) =>{
+        response.json().then((data) =>{
+            res.send(data);
+        })
     })
-})
+});
+
+
 
 app.listen(port, () =>{
     console.log("Server started at Port "+port);
