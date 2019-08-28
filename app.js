@@ -5,6 +5,7 @@ const fetch = require("node-fetch");
 const blueBird = require("bluebird");
 console.log(__dirname);
 console.log(__filename);
+const port = process.env.PORT || 3000;
 
 app.set("view engine","hbs");
 
@@ -40,6 +41,6 @@ fetch("http://puzzle.mead.io/puzzle").then((response) =>{
     })
 })
 
-app.listen(3000, () =>{
-    console.log("Server started at Port 3000");
+app.listen(port, () =>{
+    console.log("Server started at Port "+port);
 })
